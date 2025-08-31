@@ -1,0 +1,5 @@
+package cherryConst
+
+const (
+	DOT = "."
+)

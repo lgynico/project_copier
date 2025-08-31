@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "github.com/lgynico/project-copier/cherry/net/proto/proto;cherryProto";
+
+package cherryProto;
+
+message ClusterPacket {
+    int64   buildTime = 1;
+    string sourcePath = 2;
+    string targetPath = 3;
+    string   funcName = 4;
+    bytes    argBytes = 5;
+    Session   session = 6;
+}
+
+message Session {
+    string               sid = 1; // session unique id
+    uint32               uid = 2; // user id
+    string         agentPath = 3; // frontend actor agent path
+    string                ip = 4; // ip address
+    map<string, string> data = 7; // extend data
+}
