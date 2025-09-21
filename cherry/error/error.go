@@ -9,3 +9,7 @@ func Error(text string) error {
 var (
 	ErrActorPath = Error("Actor path is error.")
 )
+
+var (
+	ClusterRequestTimeout = Error("Cluster request timeout")
+)
