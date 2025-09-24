@@ -11,5 +11,9 @@ var (
 )
 
 var (
+	ProtobufWrongValueType = Error("Convert on wrong value type")
+)
+
+var (
 	ClusterRequestTimeout = Error("Cluster request timeout")
 )
