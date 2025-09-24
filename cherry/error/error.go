@@ -1,9 +1,16 @@
 package cherryError
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 func Error(text string) error {
 	return errors.New(text)
+}
+
+func Errorf(format string, args ...any) error {
+	return fmt.Errorf(format, args...)
 }
 
 var (

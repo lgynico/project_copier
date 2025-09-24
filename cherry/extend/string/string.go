@@ -34,3 +34,16 @@ func ToString(value any) string {
 
 	return ret
 }
+
+func ToStringSlice(val []any) []string {
+	var result []string
+
+	for _, item := range val {
+		v, ok := item.(string)
+		if ok {
+			result = append(result, v)
+		}
+	}
+
+	return result
+}
