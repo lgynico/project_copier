@@ -256,8 +256,10 @@ func (p *Cluster) RequestRemote(nodeID string, packet *cproto.ClusterPacket, tim
 
 	rsp := &cproto.Response{}
 	if err = proto.Unmarshal(natsData, rsp); err != nil {
-		clog.Warnf("[RequestRemote] Unmarshal fail. [nodeID = %s, %s, rsp, err = %v]",
+		clog.Warnf("[RequestRemote] Unmarshal fail. [nodeID = %s, %s, rsp = %v, err = %v]",
 			nodeID, packet.PrintLog(), rsp, err)
+
+		return nil, ccode.PRCUnmarshalError
 	}
 
 	return rsp.Data, rsp.Code
