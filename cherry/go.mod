@@ -3,6 +3,7 @@ module github.com/lgynico/project-copier/cherry
 go 1.24.3
 
 require (
+	github.com/gorilla/websocket v1.5.3
 	github.com/json-iterator/go v1.1.12
 	github.com/nats-io/nats.go v1.45.0
 	google.golang.org/protobuf v1.36.6
