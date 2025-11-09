@@ -74,7 +74,7 @@ func NewPath(nodeID, actorID any) string {
 
 func ToActorPath(path string) (*ActorPath, error) {
 	if path == "" {
-		return nil, cerr.ErrActorPath
+		return nil, cerr.ActorPathError
 	}
 
 	p := strings.Split(path, cconst.DOT)
@@ -88,7 +88,7 @@ func ToActorPath(path string) (*ActorPath, error) {
 		return NewActorPath(p[0], p[1], p[2]), nil
 	}
 
-	return nil, cerr.ErrActorPath
+	return nil, cerr.ActorPathError
 }
 
 func (p *Message) TargetPath() *ActorPath {

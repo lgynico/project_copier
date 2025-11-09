@@ -1,6 +1,10 @@
 package cherryFacade
 
-import cproto "github.com/lgynico/project-copier/cherry/net/proto"
+import (
+	"time"
+
+	cproto "github.com/lgynico/project-copier/cherry/net/proto"
+)
 
 type (
 	ICluster interface {
@@ -10,7 +14,7 @@ type (
 		PublishLocal(nodeID string, packet *cproto.ClusterPacket) error
 		PublishRemote(nodeID string, packet *cproto.ClusterPacket) error
 		PublishRemoteType(nodeType string, packet *cproto.ClusterPacket) error
-		RequestRemote(nodeID string, packet *cproto.ClusterPacket) ([]byte, error)
+		RequestRemote(nodeID string, packet *cproto.ClusterPacket, timeout ...time.Duration) ([]byte, int32)
 	}
 
 	IDiscovery interface {

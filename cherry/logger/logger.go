@@ -19,3 +19,7 @@ func Debugf(format string, v ...any) {
 func Infof(format string, v ...any) {
 	log.Printf(format, v...)
 }
+
+func Info(args ...any) {
+	log.Print(args...)
+}

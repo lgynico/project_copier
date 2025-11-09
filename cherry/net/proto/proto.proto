@@ -4,6 +4,26 @@ option go_package = "github.com/lgynico/project-copier/cherry/net/proto/proto;ch
 
 package cherryProto;
 
+message I32 {
+    int32 value = 1;
+}
+
+message Member {
+    string                nodeID = 1;
+    string              nodeType = 2;
+    string               address = 3;
+    map<string, string> settings = 4;
+}
+
+message MemberList {
+    repeated Member list = 1;
+}
+
+message Response {
+    int32 code = 1;
+    bytes data = 2;
+}
+
 message ClusterPacket {
     int64   buildTime = 1;
     string sourcePath = 2;
